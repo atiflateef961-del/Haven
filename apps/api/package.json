@@ -5,6 +5,9 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "type": "module",
   "scripts": {
     "build": "nest build",
@@ -12,7 +15,7 @@
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
+    "start:prod": "node dist/src/main.js",
     "bootstrap:super-admin": "pnpm build && node scripts/bootstrap_super_admin.mjs",
     "lint": "oxlint --type-aware src/ test/",
     "test": "vitest run",
