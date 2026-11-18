@@ -1,0 +1,576 @@
+{
+  "origin": "http://localhost:3000",
+  "createdAt": "2026-11-15T20:42:22.089Z",
+  "routes": {
+    "http://localhost:3000/": {
+      "title": "Hostel Management System",
+      "href": "http://localhost:3000/login",
+      "ready": "complete",
+      "status": 200,
+      "redirects": [
+        {
+          "status": 307,
+          "url": "http://localhost:3000/",
+          "to": "http://localhost:3000/dashboard"
+        },
+        {
+          "status": 307,
+          "url": "http://localhost:3000/dashboard",
+          "to": "http://localhost:3000/login"
+        }
+      ],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "httpErrors": [],
+      "page": {
+        "text": "Light theme H Haven Management PRIVATE PORTAL Welcome back Sign in to continue to your hostel workspace. Email address* Password* Show Sign in Need access? Contact your hostel administrator. Password recovery is available through your administrator. A considered space for better hostel living.",
+        "links": [],
+        "inputs": [
+          {
+            "tag": "input",
+            "type": "email",
+            "name": "email",
+            "required": true,
+            "label": true
+          },
+          {
+            "tag": "input",
+            "type": "password",
+            "name": "password",
+            "required": true,
+            "label": true
+          }
+        ],
+        "buttons": [
+          {
+            "text": "Light theme",
+            "disabled": false
+          },
+          {
+            "text": "Show",
+            "disabled": false
+          },
+          {
+            "text": "Sign in",
+            "disabled": false
+          }
+        ],
+        "images": [],
+        "forms": [
+          {
+            "action": "http://localhost:3000/login",
+            "valid": false,
+            "fields": 4
+          }
+        ],
+        "overflow": false,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "undefinedText": false,
+        "lcp": 904
+      }
+    },
+    "http://localhost:3000/login": {
+      "title": "Hostel Management System",
+      "href": "http://localhost:3000/login",
+      "ready": "complete",
+      "status": 200,
+      "redirects": [],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "httpErrors": [],
+      "page": {
+        "text": "Light theme H Haven Management PRIVATE PORTAL Welcome back Sign in to continue to your hostel workspace. Email address* Password* Show Sign in Need access? Contact your hostel administrator. Password recovery is available through your administrator. A considered space for better hostel living.",
+        "links": [],
+        "inputs": [
+          {
+            "tag": "input",
+            "type": "email",
+            "name": "email",
+            "required": true,
+            "label": true
+          },
+          {
+            "tag": "input",
+            "type": "password",
+            "name": "password",
+            "required": true,
+            "label": true
+          }
+        ],
+        "buttons": [
+          {
+            "text": "Light theme",
+            "disabled": false
+          },
+          {
+            "text": "Show",
+            "disabled": false
+          },
+          {
+            "text": "Sign in",
+            "disabled": false
+          }
+        ],
+        "images": [],
+        "forms": [
+          {
+            "action": "http://localhost:3000/login",
+            "valid": false,
+            "fields": 4
+          }
+        ],
+        "overflow": false,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "undefinedText": false,
+        "lcp": 292
+      }
+    },
+    "http://localhost:3000/dashboard": {
+      "title": "Hostel Management System",
+      "href": "http://localhost:3000/login",
+      "ready": "complete",
+      "status": 200,
+      "redirects": [
+        {
+          "status": 307,
+          "url": "http://localhost:3000/dashboard",
+          "to": "http://localhost:3000/login"
+        }
+      ],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "httpErrors": [],
+      "page": {
+        "text": "Light theme H Haven Management PRIVATE PORTAL Welcome back Sign in to continue to your hostel workspace. Email address* Password* Show Sign in Need access? Contact your hostel administrator. Password recovery is available through your administrator. A considered space for better hostel living.",
+        "links": [],
+        "inputs": [
+          {
+            "tag": "input",
+            "type": "email",
+            "name": "email",
+            "required": true,
+            "label": true
+          },
+          {
+            "tag": "input",
+            "type": "password",
+            "name": "password",
+            "required": true,
+            "label": true
+          }
+        ],
+        "buttons": [
+          {
+            "text": "Light theme",
+            "disabled": false
+          },
+          {
+            "text": "Show",
+            "disabled": false
+          },
+          {
+            "text": "Sign in",
+            "disabled": false
+          }
+        ],
+        "images": [],
+        "forms": [
+          {
+            "action": "http://localhost:3000/login",
+            "valid": false,
+            "fields": 4
+          }
+        ],
+        "overflow": false,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "undefinedText": false,
+        "lcp": 368
+      }
+    },
+    "http://localhost:3000/hostels": {
+      "title": "Hostel Management System",
+      "href": "http://localhost:3000/login",
+      "ready": "complete",
+      "status": 200,
+      "redirects": [
+        {
+          "status": 307,
+          "url": "http://localhost:3000/hostels",
+          "to": "http://localhost:3000/login"
+        }
+      ],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "httpErrors": [],
+      "page": {
+        "text": "Light theme H Haven Management PRIVATE PORTAL Welcome back Sign in to continue to your hostel workspace. Email address* Password* Show Sign in Need access? Contact your hostel administrator. Password recovery is available through your administrator. A considered space for better hostel living.",
+        "links": [],
+        "inputs": [
+          {
+            "tag": "input",
+            "type": "email",
+            "name": "email",
+            "required": true,
+            "label": true
+          },
+          {
+            "tag": "input",
+            "type": "password",
+            "name": "password",
+            "required": true,
+            "label": true
+          }
+        ],
+        "buttons": [
+          {
+            "text": "Light theme",
+            "disabled": false
+          },
+          {
+            "text": "Show",
+            "disabled": false
+          },
+          {
+            "text": "Sign in",
+            "disabled": false
+          }
+        ],
+        "images": [],
+        "forms": [
+          {
+            "action": "http://localhost:3000/login",
+            "valid": false,
+            "fields": 4
+          }
+        ],
+        "overflow": false,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "undefinedText": false,
+        "lcp": 256
+      }
+    },
+    "http://localhost:3000/students": {
+      "title": "Hostel Management System",
+      "href": "http://localhost:3000/login",
+      "ready": "complete",
+      "status": 200,
+      "redirects": [
+        {
+          "status": 307,
+          "url": "http://localhost:3000/students",
+          "to": "http://localhost:3000/login"
+        }
+      ],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "httpErrors": [],
+      "page": {
+        "text": "Light theme H Haven Management PRIVATE PORTAL Welcome back Sign in to continue to your hostel workspace. Email address* Password* Show Sign in Need access? Contact your hostel administrator. Password recovery is available through your administrator. A considered space for better hostel living.",
+        "links": [],
+        "inputs": [
+          {
+            "tag": "input",
+            "type": "email",
+            "name": "email",
+            "required": true,
+            "label": true
+          },
+          {
+            "tag": "input",
+            "type": "password",
+            "name": "password",
+            "required": true,
+            "label": true
+          }
+        ],
+        "buttons": [
+          {
+            "text": "Light theme",
+            "disabled": false
+          },
+          {
+            "text": "Show",
+            "disabled": false
+          },
+          {
+            "text": "Sign in",
+            "disabled": false
+          }
+        ],
+        "images": [],
+        "forms": [
+          {
+            "action": "http://localhost:3000/login",
+            "valid": false,
+            "fields": 4
+          }
+        ],
+        "overflow": false,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "undefinedText": false,
+        "lcp": 248
+      }
+    },
+    "http://localhost:3000/bookings": {
+      "title": "Hostel Management System",
+      "href": "http://localhost:3000/login",
+      "ready": "complete",
+      "status": 200,
+      "redirects": [
+        {
+          "status": 307,
+          "url": "http://localhost:3000/bookings",
+          "to": "http://localhost:3000/login"
+        }
+      ],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "httpErrors": [],
+      "page": {
+        "text": "Light theme H Haven Management PRIVATE PORTAL Welcome back Sign in to continue to your hostel workspace. Email address* Password* Show Sign in Need access? Contact your hostel administrator. Password recovery is available through your administrator. A considered space for better hostel living.",
+        "links": [],
+        "inputs": [
+          {
+            "tag": "input",
+            "type": "email",
+            "name": "email",
+            "required": true,
+            "label": true
+          },
+          {
+            "tag": "input",
+            "type": "password",
+            "name": "password",
+            "required": true,
+            "label": true
+          }
+        ],
+        "buttons": [
+          {
+            "text": "Light theme",
+            "disabled": false
+          },
+          {
+            "text": "Show",
+            "disabled": false
+          },
+          {
+            "text": "Sign in",
+            "disabled": false
+          }
+        ],
+        "images": [],
+        "forms": [
+          {
+            "action": "http://localhost:3000/login",
+            "valid": false,
+            "fields": 4
+          }
+        ],
+        "overflow": false,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "undefinedText": false,
+        "lcp": 248
+      }
+    },
+    "http://localhost:3000/invoices": {
+      "title": "Hostel Management System",
+      "href": "http://localhost:3000/login",
+      "ready": "complete",
+      "status": 200,
+      "redirects": [
+        {
+          "status": 307,
+          "url": "http://localhost:3000/invoices",
+          "to": "http://localhost:3000/login"
+        }
+      ],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "httpErrors": [],
+      "page": {
+        "text": "Light theme H Haven Management PRIVATE PORTAL Welcome back Sign in to continue to your hostel workspace. Email address* Password* Show Sign in Need access? Contact your hostel administrator. Password recovery is available through your administrator. A considered space for better hostel living.",
+        "links": [],
+        "inputs": [
+          {
+            "tag": "input",
+            "type": "email",
+            "name": "email",
+            "required": true,
+            "label": true
+          },
+          {
+            "tag": "input",
+            "type": "password",
+            "name": "password",
+            "required": true,
+            "label": true
+          }
+        ],
+        "buttons": [
+          {
+            "text": "Light theme",
+            "disabled": false
+          },
+          {
+            "text": "Show",
+            "disabled": false
+          },
+          {
+            "text": "Sign in",
+            "disabled": false
+          }
+        ],
+        "images": [],
+        "forms": [
+          {
+            "action": "http://localhost:3000/login",
+            "valid": false,
+            "fields": 4
+          }
+        ],
+        "overflow": false,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "undefinedText": false,
+        "lcp": 252
+      }
+    },
+    "http://localhost:3000/my-profile": {
+      "title": "Hostel Management System",
+      "href": "http://localhost:3000/login",
+      "ready": "complete",
+      "status": 200,
+      "redirects": [
+        {
+          "status": 307,
+          "url": "http://localhost:3000/my-profile",
+          "to": "http://localhost:3000/login"
+        }
+      ],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "httpErrors": [],
+      "page": {
+        "text": "Light theme H Haven Management PRIVATE PORTAL Welcome back Sign in to continue to your hostel workspace. Email address* Password* Show Sign in Need access? Contact your hostel administrator. Password recovery is available through your administrator. A considered space for better hostel living.",
+        "links": [],
+        "inputs": [
+          {
+            "tag": "input",
+            "type": "email",
+            "name": "email",
+            "required": true,
+            "label": true
+          },
+          {
+            "tag": "input",
+            "type": "password",
+            "name": "password",
+            "required": true,
+            "label": true
+          }
+        ],
+        "buttons": [
+          {
+            "text": "Light theme",
+            "disabled": false
+          },
+          {
+            "text": "Show",
+            "disabled": false
+          },
+          {
+            "text": "Sign in",
+            "disabled": false
+          }
+        ],
+        "images": [],
+        "forms": [
+          {
+            "action": "http://localhost:3000/login",
+            "valid": false,
+            "fields": 4
+          }
+        ],
+        "overflow": false,
+        "scrollWidth": 1280,
+        "innerWidth": 1280,
+        "undefinedText": false,
+        "lcp": 268
+      }
+    }
+  },
+  "mobile": [
+    {
+      "url": "http://localhost:3000/",
+      "overflow": false,
+      "width": 375,
+      "scrollWidth": 375,
+      "consoleErrors": []
+    },
+    {
+      "url": "http://localhost:3000/login",
+      "overflow": false,
+      "width": 375,
+      "scrollWidth": 375,
+      "consoleErrors": []
+    },
+    {
+      "url": "http://localhost:3000/dashboard",
+      "overflow": false,
+      "width": 375,
+      "scrollWidth": 375,
+      "consoleErrors": []
+    },
+    {
+      "url": "http://localhost:3000/hostels",
+      "overflow": false,
+      "width": 375,
+      "scrollWidth": 375,
+      "consoleErrors": []
+    },
+    {
+      "url": "http://localhost:3000/students",
+      "overflow": false,
+      "width": 375,
+      "scrollWidth": 375,
+      "consoleErrors": []
+    },
+    {
+      "url": "http://localhost:3000/bookings",
+      "overflow": false,
+      "width": 375,
+      "scrollWidth": 375,
+      "consoleErrors": []
+    },
+    {
+      "url": "http://localhost:3000/invoices",
+      "overflow": false,
+      "width": 375,
+      "scrollWidth": 375,
+      "consoleErrors": []
+    },
+    {
+      "url": "http://localhost:3000/my-profile",
+      "overflow": false,
+      "width": 375,
+      "scrollWidth": 375,
+      "consoleErrors": []
+    }
+  ],
+  "interactions": {
+    "blankLoginRejectedByBrowser": true,
+    "visiblePassword": true,
+    "hiddenPassword": true,
+    "themeChanged": true,
+    "loginFieldsLabeled": true,
+    "buttonsLabeled": true
+  },
+  "screenshots": "D:\\Hostel_Application\\qa-screenshots"
+}

@@ -1,0 +1,51 @@
+BEGIN;
+
+INSERT INTO "Organization" ("id", "name", "slug", "updatedAt") VALUES
+  ('f1000000-0000-4000-8000-000000000001', 'Constraint test', 'constraint-test-intervals', CURRENT_TIMESTAMP);
+INSERT INTO "Student" ("id", "organizationId", "studentNumber", "firstName", "lastName", "updatedAt") VALUES
+  ('f1000000-0000-4000-8000-000000000011', 'f1000000-0000-4000-8000-000000000001', 'T-1', 'Test', 'One', CURRENT_TIMESTAMP),
+  ('f1000000-0000-4000-8000-000000000012', 'f1000000-0000-4000-8000-000000000001', 'T-2', 'Test', 'Two', CURRENT_TIMESTAMP),
+  ('f1000000-0000-4000-8000-000000000013', 'f1000000-0000-4000-8000-000000000001', 'T-3', 'Test', 'Three', CURRENT_TIMESTAMP);
+INSERT INTO "Hostel" ("id", "organizationId", "name", "code", "updatedAt") VALUES
+  ('f1000000-0000-4000-8000-000000000021', 'f1000000-0000-4000-8000-000000000001', 'Test Hostel', 'TST', CURRENT_TIMESTAMP);
+INSERT INTO "Building" ("id", "hostelId", "name") VALUES
+  ('f1000000-0000-4000-8000-000000000031', 'f1000000-0000-4000-8000-000000000021', 'Test Building');
+INSERT INTO "Floor" ("id", "buildingId", "number") VALUES
+  ('f1000000-0000-4000-8000-000000000041', 'f1000000-0000-4000-8000-000000000031', 1);
+INSERT INTO "Room" ("id", "floorId", "number") VALUES
+  ('f1000000-0000-4000-8000-000000000051', 'f1000000-0000-4000-8000-000000000041', 'T-1');
+INSERT INTO "Bed" ("id", "roomId", "label") VALUES
+  ('f1000000-0000-4000-8000-000000000061', 'f1000000-0000-4000-8000-000000000051', 'A'),
+  ('f1000000-0000-4000-8000-000000000062', 'f1000000-0000-4000-8000-000000000051', 'B');
+
+DO $$
+BEGIN
+  INSERT INTO "BedAllocation" ("id", "studentId", "bedId", "startsAt", "endsAt") VALUES
+    ('f1000000-0000-4000-8000-000000000071', 'f1000000-0000-4000-8000-000000000011', 'f1000000-0000-4000-8000-000000000061', '2027-01-01T00:00:00Z', '2027-01-10T00:00:00Z');
+
+  -- Half-open intervals permit an adjacent stay on the same bed.
+  INSERT INTO "BedAllocation" ("id", "studentId", "bedId", "startsAt", "endsAt") VALUES
+    ('f1000000-0000-4000-8000-000000000072', 'f1000000-0000-4000-8000-000000000012', 'f1000000-0000-4000-8000-000000000061', '2027-01-10T00:00:00Z', '2027-01-20T00:00:00Z');
+
+  BEGIN
+    INSERT INTO "BedAllocation" ("id", "studentId", "bedId", "startsAt", "endsAt") VALUES
+      ('f1000000-0000-4000-8000-000000000073', 'f1000000-0000-4000-8000-000000000013', 'f1000000-0000-4000-8000-000000000061', '2027-01-09T00:00:00Z', '2027-01-11T00:00:00Z');
+    RAISE EXCEPTION 'Expected overlapping bed allocation to be rejected';
+  EXCEPTION WHEN exclusion_violation THEN
+    NULL;
+  END;
+
+  BEGIN
+    INSERT INTO "BedAllocation" ("id", "studentId", "bedId", "startsAt", "endsAt") VALUES
+      ('f1000000-0000-4000-8000-000000000074', 'f1000000-0000-4000-8000-000000000011', 'f1000000-0000-4000-8000-000000000062', '2027-01-05T00:00:00Z', '2027-01-12T00:00:00Z');
+    RAISE EXCEPTION 'Expected overlapping student allocation to be rejected';
+  EXCEPTION WHEN exclusion_violation THEN
+    NULL;
+  END;
+
+  -- Cancelled history does not reserve a bed or a student interval.
+  INSERT INTO "BedAllocation" ("id", "studentId", "bedId", "status", "startsAt", "endsAt") VALUES
+    ('f1000000-0000-4000-8000-000000000075', 'f1000000-0000-4000-8000-000000000013', 'f1000000-0000-4000-8000-000000000061', 'CANCELLED', '2027-01-05T00:00:00Z', '2027-01-12T00:00:00Z');
+END $$;
+
+ROLLBACK;
