@@ -38,15 +38,15 @@ function notifyThemeSubscribers() {
 
 export function ThemeProvider({
   children,
-  initialTheme,
+  defaultTheme = "light",
 }: {
   children: ReactNode;
-  initialTheme: Theme;
+  defaultTheme?: Theme;
 }) {
   const theme = useSyncExternalStore(
     subscribeToTheme,
     getThemeSnapshot,
-    () => initialTheme,
+    () => defaultTheme,
   );
   function toggleTheme() {
     const nextTheme: Theme = theme === "dark" ? "light" : "dark";

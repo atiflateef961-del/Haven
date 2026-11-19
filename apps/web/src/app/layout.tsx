@@ -12,25 +12,25 @@ export const metadata: Metadata = {
   description: "Hostel operations management application.",
 };
 
-const themeBootstrap = `(function(){try{var t=localStorage.getItem('hms-theme');if(t!=='dark'&&t!=='light'){var m=document.cookie.match(/(?:^|;\\s*)hms-theme=(dark|light)(?:;|$)/);t=m?m[1]:null}if(t!=='dark'&&t!=='light')t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';var r=document.documentElement;r.dataset.theme=t;r.classList.toggle('dark',t==='dark')}catch(_){}})();`;
+const themeBootstrap = `(function(){try{var t=localStorage.getItem('hms-theme');if(t!=='dark'&&t!=='light'){var m=document.cookie.match(/(?:^|;\\s*)hms-theme=(dark|light)(?:;|$)/);t=m?m[1]:null}if(t!=='dark'&&t!=='light')t='light';var r=document.documentElement;r.dataset.theme=t;r.classList.toggle('dark',t==='dark')}catch(_){document.documentElement.dataset.theme='light';document.documentElement.classList.remove('dark')}})();`;
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const [cookieStore, requestHeaders] = await Promise.all([cookies(), headers()]);
   const savedTheme = cookieStore.get(THEME_COOKIE_NAME)?.value;
-  const initialTheme: Theme = isTheme(savedTheme) ? savedTheme : "light";
+  const defaultTheme: Theme = isTheme(savedTheme) ? savedTheme : "light";
   const nonce = requestHeaders.get("x-nonce") ?? undefined;
 
   return (
     <html
       lang="en"
-      data-theme={initialTheme}
+      data-theme={defaultTheme}
       suppressHydrationWarning
     >
       <head>
         <script nonce={nonce} dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
       </head>
       <body>
-        <ThemeProvider initialTheme={initialTheme}>
+        <ThemeProvider defaultTheme={defaultTheme}>
           <MotionProvider>
             <AmbientBackground />
             <div className="app-shell">{children}</div>
