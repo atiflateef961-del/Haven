@@ -8,6 +8,9 @@ import {
 } from "react";
 import {
   isTheme,
+  THEME_COOKIE_MAX_AGE,
+  THEME_COOKIE_NAME,
+  THEME_STORAGE_KEY,
   type Theme,
 } from "@/lib/theme";
 
@@ -50,6 +53,12 @@ export function ThemeProvider({
 
     document.documentElement.dataset.theme = nextTheme;
     document.documentElement.classList.toggle("dark", nextTheme === "dark");
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+    } catch {
+      // The cookie still preserves the preference when storage is unavailable.
+    }
+    document.cookie = `${THEME_COOKIE_NAME}=${nextTheme}; Path=/; Max-Age=${THEME_COOKIE_MAX_AGE}; SameSite=Lax`;
     notifyThemeSubscribers();
   }
 
